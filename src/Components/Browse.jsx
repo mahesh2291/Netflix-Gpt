@@ -1,7 +1,19 @@
+import { useEffect } from "react"
+import { useSelector,useDispatch } from "react-redux"
+import { setLogin } from "../Redux/userSlice"
+import Header from "./Header"
+
 const Browse=()=>{
+
+    const  data=useSelector((store)=>store.user.isLoggedIn)
+    const dispatch=useDispatch()
+    useEffect(()=>{
+       dispatch(setLogin())
+    },[])
+ 
     return (
         <div>
-            <h1>This is browse page</h1>
+            <Header />
         </div>
     )
 }
