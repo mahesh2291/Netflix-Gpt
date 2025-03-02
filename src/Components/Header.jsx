@@ -1,9 +1,16 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router";
+import { useEffect } from "react"
+import { onAuthStateChanged } from "firebase/auth"
+import { useDispatch} from "react-redux"
+import { removeUser, addUser, setLogin } from "../Redux/userSlice"
 
 const Header=() =>{
     const navigate=useNavigate()
+
+    const dispatch=useDispatch()
+
 const handleSignOut=()=>{
    
     signOut(auth).then(() => {
@@ -13,6 +20,28 @@ const handleSignOut=()=>{
       });
 }
 
+useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in
+          const {uid,email,displayName}= user
+          dispatch(addUser({
+            userId: uid,
+            emailId: email,
+            nameDisplay:displayName
+          }))
+          dispatch(setLogin())
+          navigate("/browse")
+         
+        
+        } else {
+          // User is signed out
+         dispatch(removeUser())
+         navigate("/")
+     
+        }
+      });
+},[])
 
     return (
         <div className="absolute bg-gradient-to-b from-black w-screen flex justify-between" >
