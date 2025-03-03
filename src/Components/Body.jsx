@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router"
+import { BrowserRouter, Route, Routes } from "react-router"
 import Browse from "./Browse"
 import Login from "./Login"
 

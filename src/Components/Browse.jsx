@@ -1,19 +1,17 @@
-import { useEffect } from "react"
-import { useSelector,useDispatch } from "react-redux"
-import { setLogin } from "../Redux/userSlice"
-import Header from "./Header"
+import Header from "./Header";
+import useNowPlayingHook from "../hooks/useNowPlayingHook"
+import MainContainer from "./MainContainer"
+import SecondaryContainer from "./SecondaryContainer"
 
 const Browse=()=>{
+  
+ useNowPlayingHook()
 
-    const  data=useSelector((store)=>store.user.isLoggedIn)
-    const dispatch=useDispatch()
-    useEffect(()=>{
-       dispatch(setLogin())
-    },[])
- 
     return (
         <div>
             <Header />
+           <MainContainer />
+           <SecondaryContainer />
         </div>
     )
 }
