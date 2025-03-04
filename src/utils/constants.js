@@ -10,3 +10,4 @@ export const options = {
 };
 
 export const imageUrl="http://image.tmdb.org/t/p/w780/"
+export const bgImage="https://assets.nflxext.com/ffe/siteui/vlv3/04ef06cc-5f81-4a8e-8db0-6430ba4af286/web/US-en-20250224-TRIFECTA-perspective_ebbccc78-aa40-42c9-bcf2-986dc9885540_small.jpg"

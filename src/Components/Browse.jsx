@@ -5,9 +5,12 @@ import SecondaryContainer from "./SecondaryContainer"
 import usePopularHook from "../hooks/usePopularHook";
 import useTopRatedHook from "../hooks/useTopRatedHook";
 import useUpcomingHook from "../hooks/useUpcomingHook";
+import GptComponent from "./GptComponent";
+import { useSelector } from "react-redux";
 
 const Browse=()=>{
-  
+  const gptToggle=useSelector((store)=>store.user.gpt)
+ 
  useNowPlayingHook()
  usePopularHook()
  useTopRatedHook()
@@ -16,8 +19,11 @@ const Browse=()=>{
     return (
         <div>
             <Header />
-           <MainContainer />
-           <SecondaryContainer />
+            {
+                gptToggle? <GptComponent /> : <><MainContainer />
+           <SecondaryContainer /></>
+            }
+           
         </div>
     )
 }
