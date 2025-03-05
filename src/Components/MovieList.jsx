@@ -9,7 +9,7 @@ const MovieList=({title,moviesNowPlaying})=>{
             
             <div className="flex hover:overflow-x-scroll ">
             {
-                moviesNowPlaying.map((data)=>{
+                moviesNowPlaying?.map((data)=>{
                   return <MovieCard key={data.id} posterpath={data.poster_path} />
                 })
             }
