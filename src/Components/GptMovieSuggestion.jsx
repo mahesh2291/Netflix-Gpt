@@ -7,11 +7,11 @@ import { gptMovieResult } from "../Redux/movieSlice"
 const GptMovieSuggestion=()=>{
 
     const {gptResult,movieNames}=useSelector((store)=>store.movie)
-    console.log(gptResult)
+ 
     if(!movieNames) return null
 
     return (
-        <div className="mt-5 bg-black text-white">
+        <div className="mt-5  text-white bg-opacity-70">
            <div>
           {
             movieNames?.map((movieName,index)=> <MovieList key={movieName} title={movieName} moviesNowPlaying={gptResult[index]} />)

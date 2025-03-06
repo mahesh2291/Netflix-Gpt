@@ -9,7 +9,7 @@ const GptComponent=()=>{
     return (
   
         <div className="p">
-            <img className="absolute -z-10" src={bgImage} />
+            <img className="fixed -z-10" src={bgImage} />
           <GptSearchBar />
           <GptMovieSuggestion />
         </div>
