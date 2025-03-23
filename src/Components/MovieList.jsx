@@ -8,7 +8,7 @@ const MovieList=({title,moviesNowPlaying})=>{
             <h1 className="text-lg font-bold md:text-2xl text-white py-4">{title}</h1>
         <div className="flex w- pt-3" >
             
-            <div className="flex hover:overflow-x-scroll ">
+            <div className="flex overflow-scroll ">
             {
                 moviesNowPlaying?.map((data)=>{
                     
