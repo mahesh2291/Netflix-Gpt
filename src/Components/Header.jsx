@@ -49,13 +49,13 @@ useEffect(()=>{
 },[])
 
     return (
-        <div className="absolute bg-gradient-to-b from-black w-screen flex justify-between" >
-            <img className="w-40 mt-5 z-50 ml-20" alt="Logo" src={logo} />
+        <div className="absolute bg-gradient-to-b from-black w-screen flex justify-between flex flex-col md:flex-row justify-between" >
+            <img className="w-40 mt-5 z-50 mx-auto md:mx-0 " alt="Logo" src={logo} />
            {
-            user &&  <div className="flex">
+            user &&  <div className="flex justify-center">
             <button className="text-white h-10 p-1 mt-10  rounded-md  z-50  mr-7 bg-lime-500" onClick={()=>dispatch(gptToggle())}>{isGptEnabled? 'HomePage' : 'Gpt Search'  }</button>
-              <img className="w-12 h-12 mt-10 mr-10" src="https://i.pinimg.com/564x/1b/a2/e6/1ba2e6d1d4874546c70c91f1024e17fb.jpg" />
-              <button onClick={()=>handleSignOut()} className="ml-2 mr-10 z-50 p-1 pb-2 text-white mt-12 border-2 h-7 ">Logout</button>
+              <img className="w-12 h-12 mt-10 mr-10 hidden md:visible" src="https://i.pinimg.com/564x/1b/a2/e6/1ba2e6d1d4874546c70c91f1024e17fb.jpg" />
+              <button onClick={()=>handleSignOut()} className="ml-2 mr-10 z-50 p-1 pb-2 bg-red-700 text-white mt-12 border-2 h-7 ">Logout</button>
               
           </div>
            }

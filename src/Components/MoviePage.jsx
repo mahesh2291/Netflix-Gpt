@@ -22,12 +22,15 @@ const searchMovie=async (movieName)=>{
     },[])
     
     return (
-        <div className=" bg-black  text-white text-center">
-        <div className="pl-5 pr-5">
-            <h1 className="text-white text-5xl pt-5 ">Movie Name-<span>{title}</span></h1>
-            <p className="pt-5">Overview-{overview}</p>
-            <p>Release Date- {release_date}</p>
+        <div className=" bg-black h-screen  text-white text-center">
+        <div className="pl-5 pr-5 align-middle">
+          
+           
+            <h1 className="text-white text-5xl pt-5 ">Movie Name-<span className="text-teal-500">{title}</span></h1>
             <img className=" mx-auto my-0 pb-10 mt-5"  src={imageUrl+backdrop_path} />
+            <p><span className="font-bold text-blue-400">Overview-</span>{overview}</p>
+            <p className="text-red-700">Release Date- {release_date}</p>
+            
         </div>
         </div>
     )

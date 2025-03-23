@@ -7,12 +7,16 @@ import GptSearchBar from "./GptSearchBar"
 
 const GptComponent=()=>{
     return (
-  
-        <div className="p">
-            <img className="fixed -z-10" src={bgImage} />
+        <>
+        <div className="fixed -z-10">
+            <img className="h-screen w-screen object-cover" src={bgImage} />
+            </div> 
+        <div className="pt-[30%] md:p-0">
+           
           <GptSearchBar />
           <GptMovieSuggestion />
         </div>
+        </>
     )
 }
 
