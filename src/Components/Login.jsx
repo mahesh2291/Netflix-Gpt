@@ -66,7 +66,7 @@ const Login=() =>{
             </div>
                 <form onSubmit={(e)=>e.preventDefault()} className="absolute bg-black w-full md:w-3/12  mx-auto mt-40 align-middle  bg-opacity-80  right-0 left-0 flex flex-col justify-center items-center p-10">
                    <h1 className="text-white font-bold text-3xl ">{isSignup?  'Sign Up' : 'Sign In'}</h1>
-                    <input ref={email} className="border-2 bg-gray-700 p-1.5 border-black    mt-7 h-15" type="text" placeholder="Email or mobile number " />
+                    <input ref={email} className="border-2 bg-gray-700 p-1.5 border-black    mt-7 h-15" type="text" placeholder="Email" />
                     {
                         isSignup && <input ref={fullName} className="border-2 bg-gray-700 p-1.5 border-black    mt-7 h-15" type="text" placeholder="Full Name" />
                     }
